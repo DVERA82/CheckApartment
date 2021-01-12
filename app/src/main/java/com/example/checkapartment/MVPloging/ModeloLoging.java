@@ -8,12 +8,12 @@ public class ModeloLoging {
 
 
     public  void validarPassword(String clave){
-        if (password != clave){
+        if (!clave.equals(password)){
             mensaje = "Password Incorrecto";
             contador ++;
         }
         else{
-            mensaje = "Validado";
+            mensaje = "Validada";
             contador = 0;
         }
 
@@ -25,5 +25,6 @@ public class ModeloLoging {
     public int getContador() {
         return contador;
     }
+
 }
 
