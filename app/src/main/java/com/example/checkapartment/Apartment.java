@@ -7,6 +7,9 @@ public class Apartment {
     private String address;       // Dirección
     private String urlImageBuilding;  // url de imagen del edificio
 
+    public Apartment() {
+    }
+
     public Apartment(String buildingName, String projectName, String unitId,
                      String address, String urlImageBuilding) {
         this.buildingName = buildingName;

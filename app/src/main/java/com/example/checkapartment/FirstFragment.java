@@ -14,7 +14,7 @@ import com.example.checkapartment.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment implements IAdapter {
     private FragmentFirstBinding binding;
-    private ApartmentData apartmentData;
+    private ApartmentData apartmentData = new ApartmentData();
 
 
     @Override

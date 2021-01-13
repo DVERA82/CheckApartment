@@ -6,13 +6,9 @@ import android.os.Bundle;
 import com.example.checkapartment.MVPloging.ILoging;
 import com.example.checkapartment.MVPloging.Presentador;
 import com.example.checkapartment.databinding.ActivityLoginBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,9 +23,7 @@ public class LoginActivity extends AppCompatActivity implements ILoging {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presentador = new Presentador(iLoging);
-        if (contadorLoging()==3){
-            binding.button.setEnabled(false);
-        }
+
 
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,15 +46,18 @@ public class LoginActivity extends AppCompatActivity implements ILoging {
     public void validarPassword(String password) {
     presentador.validarPassword(password);
 
+
     }
 
     @Override
     public String mensajeLoging() {
+
         return presentador.mensajeLoging();
     }
 
     @Override
     public int contadorLoging() {
+
         return presentador.contadorLoging();
     }
     public void onIntent(){

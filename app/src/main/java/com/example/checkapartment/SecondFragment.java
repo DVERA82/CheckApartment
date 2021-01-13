@@ -6,29 +6,45 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.checkapartment.databinding.FragmentFirstBinding;
+import com.example.checkapartment.databinding.FragmentSecondBinding;
+
 public class SecondFragment extends Fragment {
+    private FragmentSecondBinding binding;
+    private String nombreEdificio;
+    private String departamento;
+    private String direccion;
+    private String image;
+
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        binding = FragmentSecondBinding.inflate(inflater,container,false);
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments()!= null){
+            nombreEdificio = getArguments().getString("Nombre Edificio");
+            departamento = getArguments().getString("Departamento");
+            direccion = getArguments().getString("Direccion");
+            image = getArguments().getString("image");
+        }
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-            }
-        });
+
     }
 }
