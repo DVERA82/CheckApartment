@@ -7,28 +7,45 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-public class FirstFragment extends Fragment {
+import com.example.checkapartment.databinding.FragmentFirstBinding;
+
+public class FirstFragment extends Fragment implements IAdapter {
+    private FragmentFirstBinding binding;
+    private ApartmentData apartmentData;
+
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        Adapter adapter = new Adapter(apartmentData.apartmentList(),this);
+        binding.rv.setAdapter(adapter);
+        binding.rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
+
+    }
+
+    @Override
+    public void passApartment(Apartment pass) {
+        Bundle bundle = new Bundle();
+        bundle.putString("Nombre Edificio",pass.getBuildingName());
+        bundle.putString("Departamento",pass.getUnitId());
+        bundle.putString("Direccion",pass.getAddress());
+        bundle.putString("image",pass.getUrlImageBuilding());
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_FirstFragment_to_SecondFragment,bundle);
+
+
     }
 }
+
