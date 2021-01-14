@@ -9,33 +9,34 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="372dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/NombreEdif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/NombreEdif"
-        android:layout_width="47dp"
-        android:layout_height="13dp"
+        android:layout_width="97dp"
+        android:layout_height="22dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/Depto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="62dp"
+        android:layout_width="101dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -45,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Luces"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cBDormitorio" />
 
     <CheckBox
-        android:id="@+id/cBBaño"
+        android:id="@+id/cBBanio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -90,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cBCocina" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgrup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -99,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cBBaño">
+        app:layout_constraintTop_toBottomOf="@+id/cBBanio">
 
         <RadioButton
             android:id="@+id/Normal"
@@ -127,12 +128,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:text="@string/Puntaje"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/rgrup" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -142,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPuntaje" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bAlerta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

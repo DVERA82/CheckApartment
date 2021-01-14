@@ -13,4 +13,5 @@
     <string name="Email"> Ingrese Email</string>
     <string name="Password">Ingrese Clave</string>
     <string name="ButtonLoging">Ingresar</string>
+    <string name="Puntaje">Puntaje Obtenido: %1$s puntaje</string>
 </resources>
